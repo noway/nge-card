@@ -16,8 +16,8 @@
   --tscolor: #ffffff68;
   --multiplier: 2.5;
   --rad: calc(var(--multiplier) * 1px);
-  --off: 2px;
-  --noff: -2px;
+  --off: calc(2px / 2.5 * var(--multiplier));
+  --noff: calc(-2px / 2.5 * var(--multiplier));
 }
 
 body {
@@ -68,8 +68,6 @@ body {
 @media (max-width: 600px) {
   #root {
     --multiplier: 1.5;
-    --noff: calc(-2px / 2.5 * 1.5);
-    --off: calc(2px / 2.5 * 1.5);
   }
   .main {
     height: calc(100vh - 50px);
@@ -79,8 +77,6 @@ body {
 @media (max-width: 400px) {
   #root {
     --multiplier: 1.35;
-    --noff: calc(-2px / 2.5 * 1.35);
-    --off: calc(2px / 2.5 * 1.35);
   }
   .main {
     height: calc(100vh - 50px);
