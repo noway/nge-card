@@ -10,8 +10,14 @@ function App() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const nextCharacter = concatted[allTogether.length]
-      const newAllTogether = allTogether + nextCharacter
+      function generateNewAllTogether(allTog: string) {
+        const nextCharacter = concatted[allTog.length]
+        return allTog + nextCharacter
+      }
+      let newAllTogether = allTogether
+      do {
+        newAllTogether = generateNewAllTogether(newAllTogether)
+      } while (newAllTogether[newAllTogether.length - 1] === ' ');
       setAllTogether(newAllTogether)
     }, 100)
     return () => clearInterval(interval)
