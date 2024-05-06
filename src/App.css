@@ -3,7 +3,7 @@
   --tscolor: #ffffff68;
 }
 
-.stix-two-text-nge-set0 {
+.title1 {
   white-space: nowrap;
   font-weight: 900;
   font-style: normal;
@@ -18,7 +18,7 @@
   -webkit-text-stroke-width: 1px;
   text-shadow: 2px 2px var(--rad) var(--tscolor), -2px -2px var(--rad) var(--tscolor), 2px -2px var(--rad) var(--tscolor), -2px 2px var(--rad) var(--tscolor);
 }
-.stix-two-text-nge-set {
+.title2 {
   white-space: nowrap;
   font-weight: 900;
   font-style: normal;

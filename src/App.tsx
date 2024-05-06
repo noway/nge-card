@@ -30,9 +30,9 @@ function App() {
   return (
     <>
       <div className='main'>
-        <div className='text stix-two-text-nge-set'>{text1Cropped.toUpperCase()}</div>
-        <div className='text stix-two-text-nge-set0'>{text2Cropped.toUpperCase()}</div>
-        <div className='text stix-two-text-nge-set0'>{text3Cropped.toUpperCase()}</div>
+        <div className='text title2'>{text1Cropped.toUpperCase()}</div>
+        <div className='text title1'>{text2Cropped.toUpperCase()}</div>
+        <div className='text title1'>{text3Cropped.toUpperCase()}</div>
       </div>
     </>
   )
