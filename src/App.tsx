@@ -19,7 +19,7 @@ function App() {
         newAllTogether = generateNewAllTogether(newAllTogether)
       } while (newAllTogether[newAllTogether.length - 1] === ' ');
       setAllTogether(newAllTogether)
-    }, 100)
+    }, 200)
     return () => clearInterval(interval)
   }, [allTogether])
 
@@ -29,9 +29,11 @@ function App() {
 
   return (
     <>
-      <div className='main'><div className='text stix-two-text-nge-set'>{textFirstCroppedToCount.toUpperCase()}</div>
-      <div className='text stix-two-text-nge-set0'>{textSecondCroppedToCount.toUpperCase()}</div>
-      <div className='text stix-two-text-nge-set0'>{textThirdCroppedToCount.toUpperCase()}</div></div>
+      <div className='main'>
+        <div className='text stix-two-text-nge-set'>{textFirstCroppedToCount.toUpperCase()}</div>
+        <div className='text stix-two-text-nge-set0'>{textSecondCroppedToCount.toUpperCase()}</div>
+        <div className='text stix-two-text-nge-set0'>{textThirdCroppedToCount.toUpperCase()}</div>
+      </div>
     </>
   )
 }
