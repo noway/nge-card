@@ -12,9 +12,9 @@ function App() {
   // const textSecond = text.split(' ')[1]
   // const textThird = text.split(' ')[2]
 
-  const [textFirst, setTextFirst] = useState('')
-  const [textSecond, setTextSecond] = useState('')
-  const [textThird, setTextThird] = useState('')
+  const [textFirst, setTextFirst] = useState('SILICA GEL')
+  const [textSecond, setTextSecond] = useState('THROW AWAY')
+  const [textThird, setTextThird] = useState('"DO NOT EAT"')
 
   return (
     <>
