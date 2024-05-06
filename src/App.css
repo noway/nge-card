@@ -1,7 +1,4 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  text-align: center;
   --rad: 2.5px;
   --tscolor: #ffffff68;
 }
