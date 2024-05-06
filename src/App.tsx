@@ -6,6 +6,16 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
+  // const [text, setText] = useState('   ')
+
+  // const textFirst = text.split(' ')[0]
+  // const textSecond = text.split(' ')[1]
+  // const textThird = text.split(' ')[2]
+
+  const [textFirst, setTextFirst] = useState('')
+  const [textSecond, setTextSecond] = useState('')
+  const [textThird, setTextThird] = useState('')
+
   return (
     <>
       {/* <div>
@@ -16,10 +26,14 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div> */}
+
+      <input type="text" value={textFirst} onChange={(e) => setTextFirst(e.target.value)} />
+      <input type="text" value={textSecond} onChange={(e) => setTextSecond(e.target.value)} />
+      <input type="text" value={textThird} onChange={(e) => setTextThird(e.target.value)} />
       
-      <div className='stix-two-text-nge-set0'>NEON   </div>
-      <div className='stix-two-text-nge-set0'>NEON </div>
-      <div className='stix-two-text-nge-set'>NEON</div>
+      <div className='main'><div className='stix-two-text-nge-set0'>{textFirst.toUpperCase()}</div>
+      <div className='stix-two-text-nge-set0'>{textSecond.toUpperCase()}</div>
+      <div className='stix-two-text-nge-set'>{textThird.toUpperCase()}</div></div>
       {/* <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
