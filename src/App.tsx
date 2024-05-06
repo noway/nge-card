@@ -12,25 +12,28 @@ function App() {
   // const textSecond = text.split(' ')[1]
   // const textThird = text.split(' ')[2]
 
-  const [animationCharacterCounter, setAnimationCharacterCounter] = useState(0)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setAnimationCharacterCounter((animationCharacterCounter) => {
-        return animationCharacterCounter + 1
-      })
-    }, 100)
-
-    return () => clearInterval(interval)
-  }, [])
-
   const textFirst = 'SILICA GEL'
   const textSecond = 'THROW AWAY'
   const textThird = '"DO NOT EAT"'
 
-  const textFirstCroppedToCount = textFirst.slice(0, animationCharacterCounter)
-  const textSecondCroppedToCount = textSecond.slice(0, animationCharacterCounter)
-  const textThirdCroppedToCount = textThird.slice(0, animationCharacterCounter)
+  const concatted = textFirst + textSecond + textThird
+
+  const [allTogether, setAllTogether] = useState('')
+
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // one by one character from concatted
+      const nextCharacter = concatted[allTogether.length]
+      setAllTogether((prev) => prev + nextCharacter)
+    }, 100)
+
+    return () => clearInterval(interval)
+  }, [allTogether])
+
+  const textFirstCroppedToCount = allTogether.slice(0, textFirst.length)
+  const textSecondCroppedToCount = allTogether.slice(textFirst.length, textFirst.length + textSecond.length)
+  const textThirdCroppedToCount = allTogether.slice(textFirst.length + textSecond.length, textFirst.length + textSecond.length + textThird.length)
 
   return (
     <>
