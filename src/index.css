@@ -63,6 +63,18 @@ body {
   flex-direction: column;
 }
 
+/* tablet */
+
+@media (max-width: 900px) {
+  #root {
+    --multiplier: 2;
+  }
+
+  .main {
+    height: calc(100vh - 100px);
+  }
+}
+
 /* mobile */
 
 @media (max-width: 600px) {
