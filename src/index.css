@@ -16,6 +16,8 @@
   --rad: 2.5px;
   --tscolor: #ffffff68;
   --multiplier: 2.5;
+  --off: 2px;
+  --noff: -2px;
 }
 
 body {
@@ -35,7 +37,7 @@ body {
   -webkit-text-stroke: thin;
   -webkit-text-stroke-color: #ffffff82;
   -webkit-text-stroke-width: calc(1px / 2.5 * var(--multiplier));
-  text-shadow: 2px 2px var(--rad) var(--tscolor), -2px -2px var(--rad) var(--tscolor), 2px -2px var(--rad) var(--tscolor), -2px 2px var(--rad) var(--tscolor);
+  text-shadow: var(--off) var(--off) var(--rad) var(--tscolor), var(--noff) var(--noff) var(--rad) var(--tscolor), var(--off) var(--noff) var(--rad) var(--tscolor), var(--noff) var(--off) var(--rad) var(--tscolor);
 }
 
 .title2 {
@@ -51,7 +53,7 @@ body {
   -webkit-text-stroke: thin;
   -webkit-text-stroke-color: #ffffff82;
   -webkit-text-stroke-width: calc(1px / 2.5 * var(--multiplier));
-  text-shadow: 2px 2px var(--rad) var(--tscolor), -2px -2px var(--rad) var(--tscolor), 2px -2px var(--rad) var(--tscolor), -2px 2px var(--rad) var(--tscolor);
+  text-shadow: var(--off) var(--off) var(--rad) var(--tscolor), var(--noff) var(--noff) var(--rad) var(--tscolor), var(--off) var(--noff) var(--rad) var(--tscolor), var(--noff) var(--off) var(--rad) var(--tscolor);
 }
 
 .main {
@@ -66,6 +68,9 @@ body {
 @media (max-width: 600px) {
   #root {
     --multiplier: 1.5;
+    --rad: 1.5px;
+    --noff: calc(-2px / 2.5 * 1.5);
+    --off: calc(2px / 2.5 * 1.5);
   }
   .main {
     height: calc(100vh - 50px);
@@ -75,6 +80,9 @@ body {
 @media (max-width: 400px) {
   #root {
     --multiplier: 1.35;
+    --rad: 1.35px;
+    --noff: calc(-2px / 2.5 * 1.35);
+    --off: calc(2px / 2.5 * 1.35);
   }
   .main {
     height: calc(100vh - 50px);
