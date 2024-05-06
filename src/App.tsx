@@ -2,37 +2,37 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
-  const textFirst = 'SILICA GEL'
-  const textSecond = 'THROW AWAY'
-  const textThird = '"DO NOT EAT"'
-  const concatted = textFirst + textSecond + textThird
-  const [allTogether, setAllTogether] = useState('')
+  const text1 = 'SILICA GEL'
+  const text2 = 'THROW AWAY'
+  const text3 = '"DO NOT EAT"'
+  const concatted = text1 + text2 + text3
+  const [typingText, setTypingText] = useState('')
 
   useEffect(() => {
     const interval = setInterval(() => {
-      function generateNewAllTogether(allTog: string) {
-        const nextCharacter = concatted[allTog.length]
-        return allTog + nextCharacter
+      function generateNewTypingText(text: string) {
+        const nextChar = concatted[text.length]
+        return text + nextChar
       }
-      let newAllTogether = allTogether
+      let newTypingText = typingText
       do {
-        newAllTogether = generateNewAllTogether(newAllTogether)
-      } while (newAllTogether[newAllTogether.length - 1] === ' ');
-      setAllTogether(newAllTogether)
+        newTypingText = generateNewTypingText(newTypingText)
+      } while (newTypingText[newTypingText.length - 1] === ' ');
+      setTypingText(newTypingText)
     }, 200)
     return () => clearInterval(interval)
-  }, [allTogether])
+  }, [typingText])
 
-  const textFirstCroppedToCount = allTogether.slice(0, textFirst.length)
-  const textSecondCroppedToCount = allTogether.slice(textFirst.length, textFirst.length + textSecond.length)
-  const textThirdCroppedToCount = allTogether.slice(textFirst.length + textSecond.length, textFirst.length + textSecond.length + textThird.length)
+  const text1Cropped = typingText.slice(0, text1.length)
+  const text2Cropped = typingText.slice(text1.length, text1.length + text2.length)
+  const text3Cropped = typingText.slice(text1.length + text2.length, text1.length + text2.length + text3.length)
 
   return (
     <>
       <div className='main'>
-        <div className='text stix-two-text-nge-set'>{textFirstCroppedToCount.toUpperCase()}</div>
-        <div className='text stix-two-text-nge-set0'>{textSecondCroppedToCount.toUpperCase()}</div>
-        <div className='text stix-two-text-nge-set0'>{textThirdCroppedToCount.toUpperCase()}</div>
+        <div className='text stix-two-text-nge-set'>{text1Cropped.toUpperCase()}</div>
+        <div className='text stix-two-text-nge-set0'>{text2Cropped.toUpperCase()}</div>
+        <div className='text stix-two-text-nge-set0'>{text3Cropped.toUpperCase()}</div>
       </div>
     </>
   )
