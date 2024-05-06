@@ -3,6 +3,8 @@
   margin: 0 auto;
   /* padding: 2rem; */
   text-align: center;
+  --rad: 2.5px;
+  --tscolor: #ffffff68;
 }
 
 .logo {
@@ -68,7 +70,7 @@
     -webkit-text-stroke: thin;
     -webkit-text-stroke-color: #ffffff82;
     -webkit-text-stroke-width: 1px;
-    text-shadow: 2px 2px 10px blue, -2px -2px 10px blue, 2px -2px 10px blue, -2px 2px 10px blue;
+    text-shadow: 2px 2px var(--rad) var(--tscolor), -2px -2px var(--rad) var(--tscolor), 2px -2px var(--rad) var(--tscolor), -2px 2px var(--rad) var(--tscolor);
 }
 .stix-two-text-nge-set {
   white-space: nowrap;
@@ -85,7 +87,7 @@
     -webkit-text-stroke: thin;
     -webkit-text-stroke-color: #ffffff82;
     -webkit-text-stroke-width: 1px;
-    text-shadow: 2px 2px 10px blue, -2px -2px 10px blue, 2px -2px 10px blue, -2px 2px 10px blue;
+    text-shadow: 2px 2px var(--rad) var(--tscolor), -2px -2px var(--rad) var(--tscolor), 2px -2px var(--rad) var(--tscolor), -2px 2px var(--rad) var(--tscolor);
 
 }
 
