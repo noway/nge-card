@@ -11,7 +11,8 @@ function App() {
   useEffect(() => {
     const interval = setInterval(() => {
       const nextCharacter = concatted[allTogether.length]
-      setAllTogether((prev) => prev + nextCharacter)
+      const newAllTogether = allTogether + nextCharacter
+      setAllTogether(newAllTogether)
     }, 100)
     return () => clearInterval(interval)
   }, [allTogether])
