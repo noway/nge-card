@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -12,9 +12,25 @@ function App() {
   // const textSecond = text.split(' ')[1]
   // const textThird = text.split(' ')[2]
 
-  const [textFirst, setTextFirst] = useState('SILICA GEL')
-  const [textSecond, setTextSecond] = useState('THROW AWAY')
-  const [textThird, setTextThird] = useState('"DO NOT EAT"')
+  const [animationCharacterCounter, setAnimationCharacterCounter] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAnimationCharacterCounter((animationCharacterCounter) => {
+        return animationCharacterCounter + 1
+      })
+    }, 100)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  const textFirst = 'SILICA GEL'
+  const textSecond = 'THROW AWAY'
+  const textThird = '"DO NOT EAT"'
+
+  const textFirstCroppedToCount = textFirst.slice(0, animationCharacterCounter)
+  const textSecondCroppedToCount = textSecond.slice(0, animationCharacterCounter)
+  const textThirdCroppedToCount = textThird.slice(0, animationCharacterCounter)
 
   return (
     <>
@@ -27,13 +43,13 @@ function App() {
         </a>
       </div> */}
 
-      <input type="text" value={textFirst} onChange={(e) => setTextFirst(e.target.value)} />
+      {/* <input type="text" value={textFirst} onChange={(e) => setTextFirst(e.target.value)} />
       <input type="text" value={textSecond} onChange={(e) => setTextSecond(e.target.value)} />
-      <input type="text" value={textThird} onChange={(e) => setTextThird(e.target.value)} />
+      <input type="text" value={textThird} onChange={(e) => setTextThird(e.target.value)} /> */}
       
-      <div className='main'><div className='text stix-two-text-nge-set'>{textFirst.toUpperCase()}</div>
-      <div className='text stix-two-text-nge-set0'>{textSecond.toUpperCase()}</div>
-      <div className='text stix-two-text-nge-set0'>{textThird.toUpperCase()}</div></div>
+      <div className='main'><div className='text stix-two-text-nge-set'>{textFirstCroppedToCount.toUpperCase()}</div>
+      <div className='text stix-two-text-nge-set0'>{textSecondCroppedToCount.toUpperCase()}</div>
+      <div className='text stix-two-text-nge-set0'>{textThirdCroppedToCount.toUpperCase()}</div></div>
       {/* <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
