@@ -17,6 +17,10 @@
   --tscolor: #ffffff68;
 }
 
+body {
+  margin:0;
+}
+
 .title1 {
   white-space: nowrap;
   font-weight: 900;
@@ -54,4 +58,30 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+/* mobile */
+
+@media (max-width: 600px) {
+  .title1 {
+    font-size: calc(1.7em * 1.5);
+  }
+  .title2 {
+    font-size: calc(3.2em * 1.5);
+  }
+  .main {
+    height: calc(100vh - 50px);
+  }
+}
+
+@media (max-width: 400px) {
+  .title1 {
+    font-size: calc(1.7em * 1.35);
+  }
+  .title2 {
+    font-size: calc(3.2em * 1.35);
+  }
+  .main {
+    height: calc(100vh - 50px);
+  }
 }
