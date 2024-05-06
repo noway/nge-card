@@ -31,9 +31,9 @@ function App() {
       <input type="text" value={textSecond} onChange={(e) => setTextSecond(e.target.value)} />
       <input type="text" value={textThird} onChange={(e) => setTextThird(e.target.value)} />
       
-      <div className='main'><div className='stix-two-text-nge-set0'>{textFirst.toUpperCase()}</div>
-      <div className='stix-two-text-nge-set0'>{textSecond.toUpperCase()}</div>
-      <div className='stix-two-text-nge-set'>{textThird.toUpperCase()}</div></div>
+      <div className='main'><div className='text stix-two-text-nge-set'>{textFirst.toUpperCase()}</div>
+      <div className='text stix-two-text-nge-set0'>{textSecond.toUpperCase()}</div>
+      <div className='text stix-two-text-nge-set0'>{textThird.toUpperCase()}</div></div>
       {/* <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}

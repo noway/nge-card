@@ -95,3 +95,26 @@
   justify-content: center;
   flex-direction: column;
 }
+
+.text {
+  /* width: 32ch; */
+  /* animation: 
+    caret 1s steps(32) infinite,
+    typing 3s steps(32) 0s 1 normal both,
+    blinkCaret .5s step-end infinite; */
+
+    transition: text-shadow 1s, transform 1s;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 32ch }
+}
+
+@keyframes caret {
+  50% { border-color: transparent }
+}
+@keyframes blinkCaret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
+}
