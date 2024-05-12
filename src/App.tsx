@@ -20,7 +20,7 @@ function App() {
       setTypingText(newTypingText)
     }, 200)
     return () => clearInterval(interval)
-  }, [typingText])
+  }, [typingText, concatted])
 
   const text1Cropped = typingText.slice(0, text1.length)
   const text2Cropped = typingText.slice(text1.length, text1.length + text2.length)
